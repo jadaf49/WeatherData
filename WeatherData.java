@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class WeatherData
 {
     /** Guaranteed not to be null and to contain only non-null entries */
@@ -7,12 +9,12 @@ public class WeatherData
     {
         temperatures = temps;
     }
-    
+
     public void cleanData(double lower, double upper)
     { 
         for (int i=0;i<temperatures.size();i++)
         {
-            if (i>upper || i<lower) 
+            if (temperatures.get(i)>upper || temperatures.get(i)<lower) 
             {
                 temperatures.remove(i);
                 i--;
@@ -27,4 +29,10 @@ public class WeatherData
     public int longestHeatWave(double threshold)
     { /* to be implemented in part (b) */ }
     // There may be instance variables, constructors, and methods that are not shown.
+
+    public String toString()
+    {
+        return temperatures.toString();
+        
+    }
 }
